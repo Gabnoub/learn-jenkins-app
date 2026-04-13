@@ -3,6 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
+        /* 
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -20,6 +21,7 @@ pipeline {
                 '''
             }
         }
+        */
         stage ('Test') {
             agent {
                 docker {
@@ -30,7 +32,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Test stage"
-                    [ -f "build/index.html" ] && echo "index.html existiert" || echo "index.html existiert nicht"
+                    #[ -f "build/index.html" ] && echo "index.html existiert" || echo "index.html existiert nicht"
                     npm test
                 '''
             }
