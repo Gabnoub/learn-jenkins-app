@@ -31,6 +31,7 @@ pipeline {
                 sh '''
                     echo "Test stage"
                     [ -f "build/index.html" ] && echo "index.html existiert" || echo "index.html existiert nicht"
+                    npm test
                 '''
             }
         }
